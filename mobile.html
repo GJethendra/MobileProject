@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mobile project</title>
+    <link rel="stylesheet" href="mobile.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+</head>
+<body id="bg" onload="currentTime()">
+    <div id="first">.
+        <div class="second">
+            <img src="a.gif">
+            <div id="pp"></div>
+            <h1 id="t"></h1>
+            <h2 id="d"></h2>
+            <h3 id="dy"></h3>
+            <i class="fa fa-lock" id="lock"></i>
+<i class="fa fa-signal" id="signal"></i>
+<i class="fa fa-battery-full" id="battery"></i>
+<i class="fa fa-camera" id="camera"></i>
+<i class="fa fa-phone" id="phone"></i>
+<i class="fa fa-fingerprint" id="finger"></i>.  
+        </div>
+</div>
+    <script>
+        function currentTime()
+        {
+            let date=new Date();
+            var hh=date.getHours();
+            var mm=date.getMinutes();
+            var ss=date.getSeconds();
+            var dd=date.getDate();
+            var mo=date.getMonth()+1;
+            var yy=date.getFullYear();
+            var am_pm="PM"
+            if(hh>24)
+            {
+                hh=24;
+                am_pm='PM'
+            }
+            if(hh==0)
+            {
+                hh=12;
+                am_pm='AM'
+            }
+            var fullTime=hh+":"+mm+":"+ss
+            var fullDate=dd+"-"+mo+"-"+yy
+            let t=setTimeout(function(){currentTime()},1000)
+            document.getElementById("t").
+            innerHTML=fullTime;
+            document.getElementById("d").
+            innerHTML=fullDate;
+            var day=date.getDay();
+            var fullDay=''
+            switch(day)
+            {
+                case 1 :fullDay="MONDAY"
+                break;
+                case 2 :fullDay="TUESDAY"
+                break;
+                case 3 :fullDay="WEDNESDAY"
+                break;
+                case 4 :fullDay="THURSDAY"
+                break;
+                case 5 :fullDay="FRIDAY"
+                break;
+                case 6 :fullDay="SATURDAY"
+                break;
+                case 7 :fullDay="SUNDAY"
+                break;
+            }
+            document.getElementById("dy").innerHTML=fullDay;
+        }
+    </script>
+</body>
+</html>
